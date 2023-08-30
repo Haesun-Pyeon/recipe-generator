@@ -1,0 +1,176 @@
+/* 초기화 */
+body,
+main,
+h1,
+h2,
+h3,
+p,
+button,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+button:enabled {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 폰트설정 */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "GmarketSansMedium";
+}
+/* 색조합: #675D50진고동 #A9907E연고동 #F3DEBA베이지 #ABC4AA연초록 */
+
+/* 헤더파트 */
+header {
+  width: 92vw;
+  margin: 30px auto;
+}
+.head-box {
+  padding: 10px;
+  border-bottom: 1px solid #675d50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: #675d50;
+}
+header h1 {
+  flex-grow: 1;
+}
+header p {
+  margin-top: 15px;
+  color: #a9907e;
+  font-size: 0.9rem;
+}
+
+/* 메인파트 */
+main {
+  font-size: 1.1rem;
+  width: 92vw;
+  margin: 7vh auto auto;
+}
+
+/* 폼 입력화면 */
+.main-form {
+  width: 60vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+.flex-input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vh;
+}
+.desc {
+  width: 60vw;
+}
+.flex-input textarea {
+  flex-grow: 1;
+  resize: none;
+  width: 60vw;
+  height: 80px;
+  font-size: 1.1rem;
+  border: 1px solid #675d50;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #675d50;
+  border: 0;
+  border-radius: 4px;
+  height: 40px;
+  color: white;
+  transition: background-color 0.3s ease;
+  font: inherit;
+}
+button:hover {
+  background-color: #a9907e;
+}
+.flex-input ul {
+  list-style: none;
+  display: flex;
+  gap: 6vw;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.flex-input li {
+  width: 122px;
+}
+
+/* 레시피 화면 */
+.answer {
+  display: flex;
+  width: 90vw;
+  margin: auto;
+}
+.answer img {
+  margin: auto;
+  width: 40vw;
+  margin-bottom: 3vh;
+}
+.contents {
+  margin: 0 3vw 5vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  justify-content: space-between;
+  line-height: 1.7;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  width: 10vw;
+  margin: 0 auto 5vh;
+  justify-content: end;
+}
+
+/* 화면너비가 작아질때 (모바일 가로세로, 태블릿 세로) */
+@media screen and (max-width: 768px) {
+  .answer {
+    flex-direction: column;
+  }
+  .answer img {
+    width: 80vw;
+  }
+  .contents {
+    width: 80vw;
+    margin: 3vh auto;
+  }
+  .buttons {
+    width: 80vw;
+  }
+}
+.contents h2 {
+  margin-bottom: 3vh;
+  color: #675d50;
+}
+.contents h3 {
+  margin-bottom: 2vh;
+  color: #675d50;
+}
+.answer ol {
+  margin-left: 2vw;
+}
+li::marker {
+  color: #675d50;
+}
+
+/* 불러오기 페이지 */

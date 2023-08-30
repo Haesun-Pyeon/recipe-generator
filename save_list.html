@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 요리</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="head-box">
+        <h1><a href="./main.html">오늘의 요리</a></h1>
+        <a href="./save_list.html">불러오기</a>
+      </div>
+      <p>현재 가지고 있는 식재료를 입력하면 만들 수 있는 레시피를 추천해드립니다.</p>
+    </header>
+
+    <main>
+      <!-- 불러오기 클릭시 저장된 목록 불러오는 페이지 (JS말고 그냥 해도 될듯?)-->
+      <!-- 로컬스토리지에서 데이터 가져와서 tr를 저장된 데이터 갯수에 맞춰 추가해야될듯 -->
+      <table class="save-table">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>레시피명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="tal">
+              <a href="./js_recipe.html">토마토 달걀 볶음</a>
+              <!-- 연결페이지를 새html에 뿌려줄지 / js로 여기페이지에 뿌릴지?? -->
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="tal">
+              <a href="./js_recipe.html">소세지 감자 볶음밥</a>
+            </td>
+          </tr>
+          <tr>
+            <td>3re</td>
+            <td class="tal">
+              <a href="./js_recipe.html">마라 로제 크림 떡볶이</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <!-- <script src="./main.js"></script> -->
+  </body>
+</html>

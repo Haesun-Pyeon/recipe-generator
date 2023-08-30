@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 요리</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="head-box">
+        <h1><a href="./main.html">오늘의 요리</a></h1>
+        <a href="./save_list.html">불러오기</a>
+      </div>
+      <p>현재 가지고 있는 식재료를 입력하면 만들 수 있는 레시피를 추천해드립니다.</p>
+    </header>
+
+    <main>
+      <!-- 추천 버튼 클릭시 js로 추가되는 내용들 미리보기용 -->
+      <div class="answer">
+        <img src="./default.jpg" alt="음식사진" />
+        <div class="contents">
+          <h2>토마토 달걀 볶음</h2>
+          <div class="ingredient">
+            <h3>필요한 재료</h3>
+            <p>토마토, 달걀 2개, 대파, 올리브유, 소금/후춧가루 약간</p>
+          </div>
+          <div class="recipe">
+            <h3>만드는 방법</h3>
+            <ol>
+              <li>토마토와 대파는 먹기 좋게 썰어준다.</li>
+              <li>달걀에 소금을 약간 넣고 푼 후, 약한 불로 프라이팬에 올리브유를 두르고 붓는다.</li>
+              <li>
+                2가 살짝 익기 시작하면 젓가락으로 휘저어 익혀서 그릇에 담는다. 살짝 덜 익은 상태에서 불을 꺼야 달걀이 촉촉하고 부드러워진다.
+              </li>
+              <li>팬에 올리브유를 두르고 1의 대파를 먼저 볶다가 토마토를 넣어 함께 볶는다.</li>
+              <li>4에 3을 넣고 소금과 후춧가루로 간을 맞춘 뒤 살짝 버무린다.</li>
+              <li>불을 끄고 그릇에 담는다.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="buttons">
+          <button type="button" onclick="alert('저장되었습니다.');">저장하기</button>
+          <!-- 저장되었습니다는 js에서 저장과정 다 끝나고 alert로 뜨게 하기 -->
+          <button type="button" onclick="location.href='./main.html';">다시하기</button>
+        </div>
+      </div>
+    </main>
+    <!-- <script src="./main.js"></script> -->
+  </body>
+</html>
