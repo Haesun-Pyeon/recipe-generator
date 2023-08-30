@@ -31,8 +31,8 @@ a {
 body {
   font-family: "GmarketSansMedium";
 }
-/* 색조합: #675D50진고동 #A9907E연고동 #F3DEBA베이지 #ABC4AA연초록 */
 
+/* 색조합: #675D50진고동 #A9907E연고동 #F3DEBA베이지 #ABC4AA연초록 */
 /* 헤더파트 */
 header {
   width: 92vw;
@@ -79,6 +79,7 @@ main {
 }
 .desc {
   width: 60vw;
+  color: #675d50;
 }
 .flex-input textarea {
   flex-grow: 1;
@@ -89,7 +90,6 @@ main {
   border: 1px solid #675d50;
   border-radius: 4px;
 }
-
 button {
   background-color: #675d50;
   border: 0;
@@ -116,7 +116,7 @@ button:hover {
 /* 레시피 화면 */
 .answer {
   display: flex;
-  width: 90vw;
+  width: 100%;
   margin: auto;
 }
 .answer img {
@@ -126,7 +126,7 @@ button:hover {
 }
 .contents {
   margin: 0 3vw 5vh;
-  width: 40vw;
+  width: 42vw;
   display: flex;
   flex-direction: column;
   gap: 5vh;
@@ -158,6 +158,7 @@ button:hover {
     width: 80vw;
   }
 }
+
 .contents h2 {
   margin-bottom: 3vh;
   color: #675d50;
@@ -174,3 +175,35 @@ li::marker {
 }
 
 /* 불러오기 페이지 */
+.save-table {
+  border-collapse: collapse;
+  width: 100%;
+  border-top: 2px solid #675d50;
+  border-bottom: 1px solid #675d50;
+  text-align: center;
+  color: #675d50;
+}
+.save-table th {
+  background-color: #675d50;
+  color: white;
+  padding: 1vh;
+}
+.save-table td {
+  padding: 2vh 1vw;
+}
+.save-table th,
+.save-table td {
+  border-top: 1px solid #675d50;
+  border-bottom: 1px solid #675d50;
+}
+.click-tr {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.click-tr:hover {
+  background-color: #a9907e;
+  color: white;
+}
+.tal {
+  text-align: left;
+}

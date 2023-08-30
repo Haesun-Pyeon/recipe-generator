@@ -22,29 +22,27 @@
       <table class="save-table">
         <thead>
           <tr>
-            <th>번호</th>
-            <th>레시피명</th>
+            <th></th>
+            <th>입력한 재료</th>
+            <th>레시피 명</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!-- 연결페이지를 새html에 뿌려줄지 / js로 여기페이지에 뿌릴지?? -->
+          <tr class="click-tr" onclick="location.href='./js_recipe.html';">
             <td>1</td>
-            <td class="tal">
-              <a href="./js_recipe.html">토마토 달걀 볶음</a>
-              <!-- 연결페이지를 새html에 뿌려줄지 / js로 여기페이지에 뿌릴지?? -->
-            </td>
+            <td class="tal">토마토, 달걀</td>
+            <td class="tal">토마토 달걀 볶음</td>
           </tr>
-          <tr>
+          <tr class="click-tr" onclick="location.href='./js_recipe.html';">
             <td>2</td>
-            <td class="tal">
-              <a href="./js_recipe.html">소세지 감자 볶음밥</a>
-            </td>
+            <td class="tal">소세지, 감자, 밥</td>
+            <td class="tal">소세지 감자 볶음밥</td>
           </tr>
-          <tr>
-            <td>3re</td>
-            <td class="tal">
-              <a href="./js_recipe.html">마라 로제 크림 떡볶이</a>
-            </td>
+          <tr class="click-tr" onclick="location.href='./js_recipe.html';">
+            <td>3</td>
+            <td class="tal">마라소스, 로제소스, 떡</td>
+            <td class="tal">궁극의 매운 마라로제 떡볶이</td>
           </tr>
         </tbody>
       </table>
