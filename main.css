@@ -64,20 +64,21 @@ main {
 
 /* 폼 입력화면 */
 .main-form {
-  width: 60vw;
+  width: 50vw;
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 6vh;
 }
 .flex-input {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 2vh;
+  gap: 3vh;
+  width: inherit;
 }
 .label {
-  width: 60vw;
+  width: inherit;
   color: #675d50;
 }
 .desc {
@@ -89,17 +90,18 @@ main {
 .flex-input textarea {
   flex-grow: 1;
   resize: none;
-  width: 60vw;
+  width: inherit;
   height: 80px;
   font-size: 1.1rem;
   border: 1px solid #675d50;
   border-radius: 4px;
+  font-family: inherit;
 }
 button {
   background-color: #675d50;
   border: 0;
   border-radius: 4px;
-  height: 40px;
+  height: 45px;
   color: white;
   transition: background-color 0.3s ease;
   font: inherit;
@@ -170,7 +172,7 @@ button[type="submit"] {
   }
   .flex-input ul {
     justify-content: space-between;
-    gap: 4vw;
+    gap: 3vw;
   }
 }
 

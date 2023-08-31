@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 요리</title>
     <link rel="stylesheet" href="./main.css" />
+    <script src="https://kit.fontawesome.com/67cab5a85c.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -18,35 +19,35 @@
     </header>
 
     <main>
-      <p class="desc label">현재 가지고 있는 식재료를 입력하면 만들 수 있는 레시피를 추천해드립니다.</p>
-      <form method="POST" action="" class="main-form">
-        <div class="flex-input">
-          <label for="ingredient" class="label">식재료 입력하기</label>
-          <textarea id="ingredient" placeholder="콤마로 구분하여 입력해주세요."></textarea>
-        </div>
+      <div id="form-div">
+        <p class="desc label">현재 가지고 있는 식재료를 입력하면 만들 수 있는 레시피를 추천해드립니다.</p>
+        <form method="POST" action="" class="main-form">
+          <div class="flex-input">
+            <label for="ingredient" class="label">식재료 입력하기</label>
+            <textarea id="ingredient" placeholder="콤마로 구분하여 입력해주세요."></textarea>
+          </div>
 
-        <div class="flex-input">
-          <p class="label">사용 가능한 조리기구</p>
-          <ul>
-            <li><input type="checkbox" id="method1" value="microwave" /><label for="method1">전자레인지</label></li>
-            <li><input type="checkbox" id="method2" value="gas" /><label for="method2">가스레인지</label></li>
-            <li><input type="checkbox" id="method3" value="air-fryer" /><label for="method3">에어프라이어</label></li>
-            <li><input type="checkbox" id="method4" value="oven" /><label for="method4">오븐</label></li>
-          </ul>
-        </div>
-        <div class="flex-input">
-          <p class="label">재료를 더 넣어도 될까요?</p>
-          <ul>
-            <li><input id="ok" name="add-more" type="radio" /><label for="ok">가능</label></li>
-            <li><input id="no" name="add-more" type="radio" checked /><label for="no">불가능</label></li>
-          </ul>
-        </div>
-        <button type="submit">추천</button>
-      </form>
-
+          <div class="flex-input">
+            <p class="label">사용 가능한 조리기구</p>
+            <ul id="checkboxes">
+              <li><input type="checkbox" name="tools" id="method1" value="전자레인지" /><label for="method1">전자레인지</label></li>
+              <li><input type="checkbox" name="tools" id="method2" value="가스레인지" /><label for="method2">가스레인지</label></li>
+              <li><input type="checkbox" name="tools" id="method3" value="에어프라이어" /><label for="method3">에어프라이어</label></li>
+              <li><input type="checkbox" name="tools" id="method4" value="오븐" /><label for="method4">오븐</label></li>
+            </ul>
+          </div>
+          <div class="flex-input">
+            <p class="label">재료를 더 넣어도 될까요?</p>
+            <ul id="radios">
+              <li><input id="ok" name="add-more" type="radio" value="true" checked /><label for="ok">가능</label></li>
+              <li><input id="no" name="add-more" type="radio" value="false" /><label for="no">불가능</label></li>
+            </ul>
+          </div>
+          <button type="submit">추천</button>
+        </form>
+      </div>
       <div class="answer"></div>
     </main>
-    <!-- <script src="./main.js"></script> -->
-    <script src="https://kit.fontawesome.com/67cab5a85c.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
