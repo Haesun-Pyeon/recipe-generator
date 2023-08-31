@@ -10,21 +10,23 @@
   <body>
     <header>
       <div class="head-box">
-        <h1><a href="./main.html">오늘의 요리</a></h1>
+        <h1>
+          <a href="./main.html"><i class="fa-solid fa-utensils"></i> 오늘의 요리</a>
+        </h1>
         <a href="./save_list.html">불러오기</a>
       </div>
-      <p>현재 가지고 있는 식재료를 입력하면 만들 수 있는 레시피를 추천해드립니다.</p>
     </header>
 
     <main>
+      <p class="desc label">현재 가지고 있는 식재료를 입력하면 만들 수 있는 레시피를 추천해드립니다.</p>
       <form method="POST" action="" class="main-form">
         <div class="flex-input">
-          <label for="ingredient" class="desc">식재료 입력하기</label>
+          <label for="ingredient" class="label">식재료 입력하기</label>
           <textarea id="ingredient" placeholder="콤마로 구분하여 입력해주세요."></textarea>
         </div>
 
         <div class="flex-input">
-          <p class="desc">사용 가능한 조리기구</p>
+          <p class="label">사용 가능한 조리기구</p>
           <ul>
             <li><input type="checkbox" id="method1" value="microwave" /><label for="method1">전자레인지</label></li>
             <li><input type="checkbox" id="method2" value="gas" /><label for="method2">가스레인지</label></li>
@@ -33,7 +35,7 @@
           </ul>
         </div>
         <div class="flex-input">
-          <p class="desc">다른 재료를 추가해도 되나요?</p>
+          <p class="label">재료를 더 넣어도 될까요?</p>
           <ul>
             <li><input id="ok" name="add-more" type="radio" /><label for="ok">가능</label></li>
             <li><input id="no" name="add-more" type="radio" checked /><label for="no">불가능</label></li>
@@ -45,5 +47,6 @@
       <div class="answer"></div>
     </main>
     <!-- <script src="./main.js"></script> -->
+    <script src="https://kit.fontawesome.com/67cab5a85c.js"></script>
   </body>
 </html>

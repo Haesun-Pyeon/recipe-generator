@@ -35,12 +35,15 @@ body {
 /* 색조합: #675D50진고동 #A9907E연고동 #F3DEBA베이지 #ABC4AA연초록 */
 /* 헤더파트 */
 header {
-  width: 92vw;
-  margin: 30px auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 2px solid #675d50;
 }
 .head-box {
-  padding: 10px;
-  border-bottom: 1px solid #675d50;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,17 +53,13 @@ header {
 header h1 {
   flex-grow: 1;
 }
-header p {
-  margin-top: 15px;
-  color: #a9907e;
-  font-size: 0.9rem;
-}
 
 /* 메인파트 */
 main {
+  padding-top: 125px;
   font-size: 1.1rem;
   width: 92vw;
-  margin: 7vh auto auto;
+  margin: auto;
 }
 
 /* 폼 입력화면 */
@@ -69,7 +68,7 @@ main {
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 4vh;
+  gap: 3vh;
 }
 .flex-input {
   display: flex;
@@ -77,9 +76,15 @@ main {
   flex-direction: column;
   gap: 2vh;
 }
-.desc {
+.label {
   width: 60vw;
   color: #675d50;
+}
+.desc {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 30px;
+  width: 85vw;
 }
 .flex-input textarea {
   flex-grow: 1;
