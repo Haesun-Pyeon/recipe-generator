@@ -3,9 +3,11 @@ console.log("연결완료");
 const $textarea = document.querySelector("textarea");
 const $tools = document.getElementsByName("tools");
 const $radios = document.getElementsByName("add-more");
-
 const $button = document.querySelector("[type='submit']");
-const $answer = document.querySelector(".answer");
+
+const $loading = document.querySelector("#loading");
+const $formDiv = document.querySelector("#form-div");
+const $answer = document.querySelector("#answer");
 
 const data = [];
 data.push({
@@ -27,13 +29,13 @@ $button.addEventListener("click", async function (e) {
     content: contents,
   });
 
-  alert("생성 중입니다. 잠시만 기다려주세요");
-  let result = await chatGPTAPI();
-  const $formDiv = document.querySelector("#form-div");
   $formDiv.setAttribute("style", "display:none;");
+  $answer.setAttribute("style", "display:none;");
+  $loading.setAttribute("style", "display:block;");
+
+  let result = await chatGPTAPI();
 
   result = result.replaceAll("\n", "<br>");
-  // $answer.innerHTML = `<p>${result}</p>`;
   localStorage.setItem("result", result);
 
   let [title, ingredient, recipe] = result.split("<br><br>", 3);
@@ -41,8 +43,10 @@ $button.addEventListener("click", async function (e) {
     title = title.split(": ")[1];
   }
   ingredient = ingredient.split("재료:")[1];
-  recipe = recipe.split("방법:")[1];
+  recipe = recipe.split("1. ")[1];
   makeRecipeHTML(title, ingredient, recipe);
+  $loading.setAttribute("style", "display:none;");
+  $answer.setAttribute("style", "display:flex;");
 });
 
 // 체크박스와 라디오버튼의 체크된 값 가져오는 함수
