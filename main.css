@@ -102,22 +102,25 @@ button {
 button:hover {
   background-color: #a9907e;
 }
+button[type="submit"] {
+  margin-bottom: 15px;
+}
 .flex-input ul {
   list-style: none;
   display: flex;
-  gap: 6vw;
+  gap: 2vw;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .flex-input li {
-  width: 122px;
+  width: 20vw;
 }
 
 /* 레시피 화면 */
 .answer {
   display: flex;
   width: 100%;
-  margin: auto;
+  margin: auto auto 15px;
 }
 .answer img {
   margin: auto;
@@ -156,6 +159,13 @@ button:hover {
   }
   .buttons {
     width: 80vw;
+  }
+  .flex-input li {
+    width: 32vw;
+  }
+  .flex-input ul {
+    justify-content: space-between;
+    gap: 4vw;
   }
 }
 
