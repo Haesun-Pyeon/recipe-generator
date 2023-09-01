@@ -21,37 +21,39 @@
     <main>
       <!-- 불러오기 클릭시 저장된 목록 불러오는 페이지 (JS말고 그냥 해도 될듯?)-->
       <!-- 로컬스토리지에서 데이터 가져와서 tr를 저장된 데이터 갯수에 맞춰 추가해야될듯 -->
-      <table class="save-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>입력한 재료</th>
-            <th>레시피 명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- 연결페이지를 새html에 뿌려줄지 / js로 여기페이지에 뿌릴지?? -->
-          <tr>
-            <!-- 저장된 내용이 없을 때 뜨는 문구 -->
-            <td colspan="3">저장된 내용이 없습니다.</td>
-          </tr>
-          <tr class="click-tr" onclick="location.href='./js_recipe.html';">
-            <td>1</td>
-            <td class="tal">토마토, 달걀</td>
-            <td class="tal">토마토 달걀 볶음</td>
-          </tr>
-          <tr class="click-tr" onclick="location.href='./js_recipe.html';">
-            <td>2</td>
-            <td class="tal">소세지, 감자, 밥</td>
-            <td class="tal">소세지 감자 볶음밥</td>
-          </tr>
-          <tr class="click-tr" onclick="location.href='./js_recipe.html';">
-            <td>3</td>
-            <td class="tal">마라소스, 로제소스, 떡</td>
-            <td class="tal">궁극의 매운 마라로제 떡볶이</td>
-          </tr>
-        </tbody>
-      </table>
+      <div id="main-div">
+        <table class="save-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>입력한 재료</th>
+              <th>레시피 명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 연결페이지를 새html에 뿌려줄지 / js로 여기페이지에 뿌릴지?? -->
+            <tr>
+              <!-- 저장된 내용이 없을 때 뜨는 문구 -->
+              <td colspan="3">저장된 내용이 없습니다.</td>
+            </tr>
+            <tr class="click-tr" onclick="location.href='./js_recipe.html';">
+              <td>1</td>
+              <td class="tal">토마토, 달걀</td>
+              <td class="tal">토마토 달걀 볶음</td>
+            </tr>
+            <tr class="click-tr" onclick="location.href='./js_recipe.html';">
+              <td>2</td>
+              <td class="tal">소세지, 감자, 밥</td>
+              <td class="tal">소세지 감자 볶음밥</td>
+            </tr>
+            <tr class="click-tr" onclick="location.href='./js_recipe.html';">
+              <td>3</td>
+              <td class="tal">마라소스, 로제소스, 떡</td>
+              <td class="tal">궁극의 매운 마라로제 떡볶이</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
     <!-- <script src="./main.js"></script> -->
   </body>

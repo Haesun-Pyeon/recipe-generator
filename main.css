@@ -55,8 +55,8 @@ header h1 {
 }
 
 /* 메인파트 */
-#form-div {
-  padding-top: 120px;
+#main-div {
+  padding-top: 125px;
   margin: auto;
   width: 95vw;
 }
@@ -108,7 +108,7 @@ button:hover {
   background-color: #ff9b50;
 }
 button[type="submit"] {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .flex-input ul {
   list-style: none;
@@ -123,10 +123,10 @@ button[type="submit"] {
 
 /* 레시피 화면 */
 #answer {
-  padding-top: 120px;
+  padding-top: 125px;
   width: 95vw;
   display: flex;
-  margin: auto auto 25px;
+  margin: auto auto 20px;
 }
 #answer img {
   margin: auto;
@@ -154,13 +154,16 @@ button[type="submit"] {
 /* 화면너비가 작아질때 (모바일 가로세로, 태블릿 세로) */
 @media screen and (max-width: 768px) {
   body {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   header h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   .flex-input textarea {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+  }
+  .desc span {
+    display: block;
   }
   #answer {
     flex-direction: column;
@@ -202,11 +205,11 @@ li::marker {
 /* 불러오기 페이지 */
 .save-table {
   border-collapse: collapse;
-  width: 100%;
   border-top: 2px solid #e25e3e;
   border-bottom: 1px solid #e25e3e;
   text-align: center;
   color: #e25e3e;
+  width: 100%;
 }
 .save-table th {
   background-color: #e25e3e;

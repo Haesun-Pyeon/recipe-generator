@@ -6,7 +6,7 @@ const $radios = document.getElementsByName("add-more");
 const $button = document.querySelector("[type='submit']");
 
 const $loading = document.querySelector("#loading");
-const $formDiv = document.querySelector("#form-div");
+const $mainDiv = document.querySelector("#main-div");
 const $answer = document.querySelector("#answer");
 
 const data = [];
@@ -29,8 +29,7 @@ $button.addEventListener("click", async function (e) {
     content: contents,
   });
 
-  $formDiv.setAttribute("style", "display:none;");
-  $answer.setAttribute("style", "display:none;");
+  $mainDiv.setAttribute("style", "display:none;");
   $loading.setAttribute("style", "display:block;");
 
   let result = await chatGPTAPI();
