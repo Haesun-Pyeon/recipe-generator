@@ -60,6 +60,7 @@ header h1 {
   margin: auto;
   width: 95vw;
 }
+
 /* 폼 입력화면 */
 .main-form {
   width: 50vw;
@@ -123,9 +124,10 @@ button[type="submit"] {
 
 /* 레시피 화면 */
 #answer {
+  /* 처음엔 안보이다가 결과창 보여줄 때 flex로 보여짐 */
+  display: none;
   padding-top: 125px;
   width: 95vw;
-  display: flex;
   margin: auto auto 20px;
 }
 #answer img {
@@ -150,43 +152,6 @@ button[type="submit"] {
   margin: 0 auto 5vh;
   justify-content: end;
 }
-
-/* 화면너비가 작아질때 (모바일 가로세로, 태블릿 세로) */
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 0.9rem;
-  }
-  header h1 {
-    font-size: 1.7rem;
-  }
-  .flex-input textarea {
-    font-size: 0.8rem;
-  }
-  .desc span {
-    display: block;
-  }
-  #answer {
-    flex-direction: column;
-  }
-  #answer img {
-    width: 80vw;
-  }
-  .contents {
-    width: 80vw;
-    margin: 3vh auto;
-  }
-  .buttons {
-    width: 80vw;
-  }
-  .flex-input li {
-    width: 32vw;
-  }
-  .flex-input ul {
-    justify-content: space-between;
-    gap: 3vw;
-  }
-}
-
 .contents h2 {
   margin-bottom: 3vh;
   color: #e25e3e;
@@ -251,4 +216,40 @@ li::marker {
 #loading i {
   font-size: 10rem;
   padding-bottom: 5vh;
+}
+
+/* 화면너비가 작아질때 (모바일 가로세로, 태블릿 세로) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+  header h1 {
+    font-size: 1.7rem;
+  }
+  .flex-input textarea {
+    font-size: 0.8rem;
+  }
+  .desc span {
+    display: block;
+  }
+  #answer {
+    flex-direction: column;
+  }
+  #answer img {
+    width: 80vw;
+  }
+  .contents {
+    width: 80vw;
+    margin: 3vh auto;
+  }
+  .buttons {
+    width: 80vw;
+  }
+  .flex-input li {
+    width: 32vw;
+  }
+  .flex-input ul {
+    justify-content: space-between;
+    gap: 3vw;
+  }
 }

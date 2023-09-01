@@ -1,5 +1,7 @@
 console.log("연결완료");
 
+import { makeRecipeHTML } from "./makeRecipe.js";
+
 const $textarea = document.querySelector("textarea");
 const $tools = document.getElementsByName("tools");
 const $radios = document.getElementsByName("add-more");
@@ -33,9 +35,8 @@ $button.addEventListener("click", async function (e) {
   $loading.setAttribute("style", "display:block;");
 
   let result = await chatGPTAPI();
-
   result = result.replaceAll("\n", "<br>");
-  localStorage.setItem("result", result);
+  console.log(result);
 
   let [title, ingredient, recipe] = result.split("<br><br>", 3);
   if (title.indexOf(":") !== -1) {
@@ -43,7 +44,7 @@ $button.addEventListener("click", async function (e) {
   }
   ingredient = ingredient.split("재료:")[1];
   recipe = recipe.split("1. ")[1];
-  makeRecipeHTML(title, ingredient, recipe);
+  makeRecipeHTML(title, ingredient, recipe, $answer);
   $loading.setAttribute("style", "display:none;");
   $answer.setAttribute("style", "display:flex;");
 });
@@ -92,58 +93,4 @@ async function chatGPTAPI() {
   console.log(json);
   const result = json.choices[0].message.content;
   return result;
-}
-
-//받아온 값으로 html 만들어주기
-function makeRecipeHTML(title, ingredient, recipe) {
-  const $img = document.createElement("img");
-  $img.src = "./default.jpg";
-  $img.alt = "음식사진";
-
-  const $contents = document.createElement("div");
-  $contents.setAttribute("class", "contents");
-
-  const $buttons = document.createElement("div");
-  $buttons.setAttribute("class", "buttons");
-
-  $answer.appendChild($img);
-  $answer.appendChild($contents);
-  $answer.appendChild($buttons);
-
-  const $title = document.createElement("h2");
-  $title.innerText = title;
-
-  const $ingredient = document.createElement("div");
-  $ingredient.setAttribute("class", "ingredient");
-  $ingredient.innerHTML += "<h3>필요한 재료</h3>";
-  ingredient = ingredient.replace("<br>", "");
-  ingredient = ingredient.replaceAll("<br>", ", ");
-  ingredient = ingredient.replaceAll("-", "");
-  $ingredient.innerHTML += `<p>${ingredient}</p>`;
-
-  const $recipe = document.createElement("div");
-  $recipe.setAttribute("class", "recipe");
-  $recipe.innerHTML += "<h3>만드는 방법</h3>";
-  recipe = recipe.replace("<br>", "");
-  recipe = recipe.replaceAll("<br>", "</li><li>");
-  recipe = "<li>" + recipe + "</li>";
-  recipe = recipe.replace(/\d{1,2}. /g, "");
-  $recipe.innerHTML += `<ol>${recipe}</ol>`;
-
-  $contents.appendChild($title);
-  $contents.appendChild($ingredient);
-  $contents.appendChild($recipe);
-
-  const $saveBtn = document.createElement("button");
-  $saveBtn.setAttribute("type", "button");
-  $saveBtn.setAttribute("onclick", 'alert("저장되었습니다.");');
-  $saveBtn.innerText = "저장하기";
-
-  const $retryBtn = document.createElement("button");
-  $retryBtn.setAttribute("type", "button");
-  $retryBtn.setAttribute("onclick", "location.reload()");
-  $retryBtn.innerText = "다시하기";
-
-  $buttons.appendChild($saveBtn);
-  $buttons.appendChild($retryBtn);
 }

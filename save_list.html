@@ -34,27 +34,13 @@
             <!-- 연결페이지를 새html에 뿌려줄지 / js로 여기페이지에 뿌릴지?? -->
             <tr>
               <!-- 저장된 내용이 없을 때 뜨는 문구 -->
-              <td colspan="3">저장된 내용이 없습니다.</td>
-            </tr>
-            <tr class="click-tr" onclick="location.href='./js_recipe.html';">
-              <td>1</td>
-              <td class="tal">토마토, 달걀</td>
-              <td class="tal">토마토 달걀 볶음</td>
-            </tr>
-            <tr class="click-tr" onclick="location.href='./js_recipe.html';">
-              <td>2</td>
-              <td class="tal">소세지, 감자, 밥</td>
-              <td class="tal">소세지 감자 볶음밥</td>
-            </tr>
-            <tr class="click-tr" onclick="location.href='./js_recipe.html';">
-              <td>3</td>
-              <td class="tal">마라소스, 로제소스, 떡</td>
-              <td class="tal">궁극의 매운 마라로제 떡볶이</td>
+              <td id="none" colspan="3">저장된 내용이 없습니다.</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <div id="answer"></div>
     </main>
-    <!-- <script src="./main.js"></script> -->
+    <script src="./save_list.js" type="module"></script>
   </body>
 </html>
