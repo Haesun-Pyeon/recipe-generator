@@ -44,7 +44,7 @@ $button.addEventListener("click", async function (e) {
   }
   ingredient = ingredient.split("재료:")[1];
   recipe = recipe.split("1. ")[1];
-  makeRecipeHTML(title, ingredient, recipe, $answer);
+  makeRecipeHTML(title, ingredient, recipe, $answer, true);
   $loading.setAttribute("style", "display:none;");
   $answer.setAttribute("style", "display:flex;");
 });
@@ -71,7 +71,7 @@ function makeContents(ingredients, selects) {
       content += "만을 사용할 수 있어. ";
     }
     if (select === "false") {
-      content += "추가재료는 안들어갔으면 좋겠어.";
+      content += "추가재료는 안들어갔으면 좋겠어. ";
     }
   });
   content += "레피시명, 재료, 요리방법 순서로 알려주고 다른 말은 하지 말아줘.";
@@ -81,7 +81,7 @@ function makeContents(ingredients, selects) {
 
 //챗GPT와 통신하여 값 받아오기
 async function chatGPTAPI() {
-  const res = await fetch(url, {
+  const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -89,7 +89,7 @@ async function chatGPTAPI() {
     body: JSON.stringify(data),
     redirect: "follow",
   });
-  const json = await res.json();
+  const json = await response.json();
   console.log(json);
   const result = json.choices[0].message.content;
   return result;

@@ -47,5 +47,5 @@ for (let i = 0; i < num; i++) {
 const $answer = document.querySelector("#answer");
 //불러오기로 들어간 페이지에서는 저장하기 다시하기 버튼을 없애고 거기에 삭제하기/돌아가기 버튼 만들기
 import { makeRecipeHTML } from "./makeRecipe.js";
-makeRecipeHTML(titles[0], ingredients[0], recipes[0], $answer);
+makeRecipeHTML(titles[0], ingredients[0], recipes[0], $answer, false);
 $answer.setAttribute("style", "display:flex;");

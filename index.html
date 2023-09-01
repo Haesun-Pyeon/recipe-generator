@@ -25,7 +25,7 @@
       </div>
       <div id="main-div">
         <p class="desc label"><span>현재 가지고 있는 식재료를 입력하면 </span><span>만들 수 있는 레시피를 추천해드립니다.</span></p>
-        <form method="POST" action="" class="main-form">
+        <form class="main-form">
           <div class="flex-input">
             <label for="ingredient" class="label"><i class="fa-solid fa-bowl-food"></i> 식재료 입력하기</label>
             <textarea id="ingredient" placeholder="콤마로 구분하여 입력해주세요."></textarea>
@@ -53,5 +53,17 @@
       <div id="answer"></div>
     </main>
     <script src="./main.js" type="module"></script>
+    <script>
+      //저장버튼 클릭 시 -> 로컬스토리지에 결과 저장
+      function saveResult(title, ingredient, recipe) {
+        const $textarea = document.querySelector("textarea");
+        const i = parseInt(localStorage.length / 4);
+        localStorage.setItem(i + "input", $textarea.value);
+        localStorage.setItem(i + "title", title);
+        localStorage.setItem(i + "ingredient", ingredient);
+        localStorage.setItem(i + "recipe", recipe);
+        alert("저장되었습니다.");
+      }
+    </script>
   </body>
 </html>
