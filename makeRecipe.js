@@ -21,16 +21,6 @@ function makeRecipeHTML(title, ingredient, recipe, $answer, tf) {
   const $title = document.createElement("h2");
   $title.innerText = title;
 
-  //파라미터가 처음 받아온 추천결과일 때 데이터 정제
-  if (tf === true) {
-    ingredient = ingredient.replace("<br>", "");
-    ingredient = ingredient.replaceAll("<br>", ", ");
-    ingredient = ingredient.replaceAll("-", "");
-
-    recipe = recipe.replaceAll("<br>", "</li><li>");
-    recipe = recipe.replace(/\d{1,3}. /g, "");
-  }
-
   const $ingredient = document.createElement("div");
   $ingredient.setAttribute("class", "ingredient");
   $ingredient.innerHTML += "<h3>필요한 재료</h3>";
@@ -59,7 +49,7 @@ function makeRecipeHTML(title, ingredient, recipe, $answer, tf) {
     $btn2.innerText = "다시하기";
   } else {
     $btn1.innerText = "삭제하기";
-    $btn1.setAttribute("onclick", `deleteResult("${title}", "${ingredient}", "${recipe}");`);
+    $btn1.setAttribute("id", "del");
     $btn2.innerText = "돌아가기";
   }
   $buttons.appendChild($btn1);

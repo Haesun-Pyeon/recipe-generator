@@ -42,10 +42,28 @@
     </main>
     <script src="./save_list.js" type="module"></script>
     <script>
-      function deleteResult(title, ingredient, recipe) {
-        // localStorage.removeItem("key");
-        // 타이틀 재료 레시피 저거보다는 몇번째인지 i값을 파라미터로 받아와야할듯??
+      //삭제버튼 클릭 시 -> 로컬스토리지에서 삭제
+      function deleteResult(i) {
+        let inputs = JSON.parse(localStorage["input"]);
+        let titles = JSON.parse(localStorage["title"]);
+        let ingredients = JSON.parse(localStorage["ingredient"]);
+        let recipes = JSON.parse(localStorage["recipe"]);
+        inputs.splice(i, 1);
+        titles.splice(i, 1);
+        ingredients.splice(i, 1);
+        recipes.splice(i, 1);
+
+        localStorage.setItem("input", JSON.stringify(inputs));
+        localStorage.setItem("title", JSON.stringify(titles));
+        localStorage.setItem("ingredient", JSON.stringify(ingredients));
+        localStorage.setItem("recipe", JSON.stringify(recipes));
+
+        if (localStorage["input"] === "[]") {
+          localStorage.clear();
+        }
+
         alert("삭제되었습니다.");
+        location.reload();
       }
     </script>
   </body>
