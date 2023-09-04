@@ -1,11 +1,14 @@
 console.log("정상 연결");
 
+const $mainDiv = document.querySelector("#main-div");
+const $answer = document.querySelector("#answer");
 const num = parseInt(localStorage.length / 4);
 let inputs = [];
 let titles = [];
 let ingredients = [];
 let recipes = [];
 
+//저장값들 불러와서 배열에 저장
 for (let i = 0; i < num; i++) {
   const input = localStorage.getItem(i + "input");
   const title = localStorage.getItem(i + "title");
@@ -29,7 +32,8 @@ const $tbody = document.querySelector("tbody");
 for (let i = 0; i < num; i++) {
   const $tr = document.createElement("tr");
   $tr.setAttribute("class", "click-tr");
-  $tr.setAttribute("onclick", "location.href='./js_recipe.html';"); //함수로 변경예정
+  $tr.setAttribute("id", i);
+  $tr.addEventListener("click", (event) => showContent(event, i));
   $tbody.appendChild($tr);
   const $td1 = document.createElement("td");
   $td1.innerText = i + 1;
@@ -44,8 +48,19 @@ for (let i = 0; i < num; i++) {
   $tr.appendChild($td3);
 }
 
-const $answer = document.querySelector("#answer");
-//불러오기로 들어간 페이지에서는 저장하기 다시하기 버튼을 없애고 거기에 삭제하기/돌아가기 버튼 만들기
 import { makeRecipeHTML } from "./makeRecipe.js";
-makeRecipeHTML(titles[0], ingredients[0], recipes[0], $answer, false);
-$answer.setAttribute("style", "display:flex;");
+
+//행 클릭시 레시피 내용 보여주기
+function showContent(event, i) {
+  makeRecipeHTML(titles[i], ingredients[i], recipes[i], $answer, false);
+  $mainDiv.setAttribute("style", "display:none;");
+  $answer.setAttribute("style", "display:flex;");
+}
+
+//전체삭제버튼
+const $deleteAll = document.querySelector(".delete-all");
+$deleteAll.onclick = () => {
+  localStorage.clear();
+  alert("전체 삭제되었습니다.");
+  location.reload();
+};

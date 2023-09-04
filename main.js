@@ -39,6 +39,7 @@ $button.addEventListener("click", async function (e) {
   console.log(result);
 
   let [title, ingredient, recipe] = result.split("<br><br>", 3);
+  //제목이 레시피명:요리 이렇게 뜰 때도 있어서
   if (title.indexOf(":") !== -1) {
     title = title.split(": ")[1];
   }
@@ -60,15 +61,15 @@ function getCheckedValue(inputs, resultArr) {
 
 //챗GPT에 질문할 내용을 만들어주는 함수
 function makeContents(ingredients, selects) {
-  let content = `${ingredients}을/를 이용한 요리의 레시피를 한 가지 알려줘. `;
+  let content = `${ingredients}을/를 이용한 요리의 레시피를 한 가지 알려줘. 가열할 수 있는 기구는 `;
   selects.forEach((select) => {
     if (selects.length === 1) {
-      content += "가열할 수 있는 기구는 없어. ";
+      content += "없어. ";
     } else if (select !== "true" && select !== "false") {
       content += select + ", ";
     } else {
       content = content.slice(0, -2);
-      content += "만을 사용할 수 있어. ";
+      content += "가 있어. ";
     }
     if (select === "false") {
       content += "추가재료는 안들어갔으면 좋겠어. ";
@@ -76,7 +77,7 @@ function makeContents(ingredients, selects) {
   });
   content += "레피시명, 재료, 요리방법 순서로 알려주고 다른 말은 하지 말아줘.";
   return content;
-  // ex) 토마토, 양파, 소세지을/를 이용한 요리의 레시피를 한 가지 알려줘. 전자레인지, 에어프라이어만을 사용할 수 있어. 추가재료는 안들어갔으면 좋겠어. 레피시명, 재료, 요리방법 순서로 알려주고 다른 말은 하지 말아줘.
+  // ex) 감자, 대파, 버섯, 소세지, 밥을/를 이용한 요리의 레시피를 한 가지 알려줘. 가열할 수 있는 기구는 가스레인지, 에어프라이어가 있어. 추가재료는 안들어갔으면 좋겠어. 레피시명, 재료, 요리방법 순서로 알려주고 다른 말은 하지 말아줘.
 }
 
 //챗GPT와 통신하여 값 받아오기

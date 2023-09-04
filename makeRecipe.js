@@ -27,9 +27,8 @@ function makeRecipeHTML(title, ingredient, recipe, $answer, tf) {
     ingredient = ingredient.replaceAll("<br>", ", ");
     ingredient = ingredient.replaceAll("-", "");
 
-    recipe = recipe.replace("<br>", "");
     recipe = recipe.replaceAll("<br>", "</li><li>");
-    recipe = recipe.replace(/\d{1,2}. /g, "");
+    recipe = recipe.replace(/\d{1,3}. /g, "");
   }
 
   const $ingredient = document.createElement("div");
