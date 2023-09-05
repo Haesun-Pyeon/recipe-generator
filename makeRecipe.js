@@ -5,8 +5,8 @@ console.log("레시피창 띄워주기");
 //불러오기에서 저장된 내용 볼 때(tf===false) 호출됨
 function makeRecipeHTML(title, ingredient, recipe, $answer, tf) {
   const $img = document.createElement("img");
-  $img.src = "./default.jpg";
   $img.alt = "음식사진";
+  imgSearch(title, $img);
 
   const $contents = document.createElement("div");
   $contents.setAttribute("class", "contents");
@@ -57,3 +57,24 @@ function makeRecipeHTML(title, ingredient, recipe, $answer, tf) {
 }
 
 export { makeRecipeHTML };
+
+//Unsplash API를 이용하여 해당 음식과 관련된 이미지 검색
+function imgSearch(title, $img) {
+  let src = "./default.jpg";
+  // const accessKey = "KfdM2QRCslKAAm8qP7gIXFiAdAfHm2IJy2__qsM-7j0";
+  const accessKey = ${{secrets.ACCESS_KEY}};
+  const apiUrl = `https://api.unsplash.com/search/photos?query=${title}&client_id=${accessKey}&lang=ko`;
+
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      // API 응답 처리
+      console.log(data);
+      src = data.results[0].urls.regular;
+      $img.setAttribute("src", src);
+    })
+    .catch(() => {
+      //오류났을 때는 기본 사진으로 설정
+      $img.setAttribute("src", src);
+    });
+}
