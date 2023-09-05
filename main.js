@@ -1,6 +1,5 @@
-console.log("연결완료");
-
 import { makeRecipeHTML } from "./makeRecipe.js";
+console.log("연결완료");
 
 const $textarea = document.querySelector("textarea");
 const $tools = document.getElementsByName("tools");

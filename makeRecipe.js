@@ -1,3 +1,4 @@
+import ACCESS_KEY from "./config.js";
 console.log("레시피창 띄워주기");
 
 //레시피 창 띄워주는 함수
@@ -61,7 +62,7 @@ export { makeRecipeHTML };
 //Unsplash API를 이용하여 해당 음식과 관련된 이미지 검색
 function imgSearch(title, $img) {
   let src = "./default.jpg";
-  const accessKey = process.env.ACCESS_KEY;
+  const accessKey = ACCESS_KEY;
   const apiUrl = `https://api.unsplash.com/search/photos?query=${title}&client_id=${accessKey}&lang=ko`;
 
   fetch(apiUrl)
