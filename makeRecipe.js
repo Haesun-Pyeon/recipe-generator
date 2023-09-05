@@ -61,8 +61,7 @@ export { makeRecipeHTML };
 //Unsplash API를 이용하여 해당 음식과 관련된 이미지 검색
 function imgSearch(title, $img) {
   let src = "./default.jpg";
-  // const accessKey = "KfdM2QRCslKAAm8qP7gIXFiAdAfHm2IJy2__qsM-7j0";
-  const accessKey = ${{secrets.ACCESS_KEY}};
+  const accessKey = process.env.ACCESS_KEY;
   const apiUrl = `https://api.unsplash.com/search/photos?query=${title}&client_id=${accessKey}&lang=ko`;
 
   fetch(apiUrl)
