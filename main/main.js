@@ -1,4 +1,4 @@
-import { makeRecipeHTML } from "./makeRecipe.js";
+import { makeRecipeHTML } from "../common/makeRecipe.js";
 console.log("연결완료");
 
 const $textarea = document.querySelector("textarea");

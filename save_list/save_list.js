@@ -1,4 +1,4 @@
-import { makeRecipeHTML } from "./makeRecipe.js";
+import { makeRecipeHTML } from "../common/makeRecipe.js";
 console.log("정상 연결");
 
 //저장된 항목이 있을 때
