@@ -1,14 +1,5 @@
 /* 초기화 */
-body,
-main,
-h1,
-h2,
-h3,
-p,
-button,
-ol,
-ul,
-li {
+* {
   margin: 0;
   padding: 0;
 }
@@ -102,7 +93,7 @@ header h1 {
   gap: 3vh;
   width: inherit;
 }
-.label {
+.input-desc {
   width: inherit;
   color: #e25e3e;
 }
@@ -111,6 +102,7 @@ header h1 {
   margin: auto;
   padding-bottom: 30px;
   width: 85vw;
+  color: #e25e3e;
 }
 .flex-input textarea {
   flex-grow: 1;
@@ -121,6 +113,7 @@ header h1 {
   border: 1px solid #e25e3e;
   border-radius: 5px;
   font-family: inherit;
+  padding: 3px;
 }
 button {
   background-color: #e25e3e;
@@ -149,10 +142,13 @@ button[type="submit"] {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
   margin-right: 10px;
-  vertical-align: bottom;
+  vertical-align: middle;
+}
+label {
+  vertical-align: middle;
 }
 
 /* 레시피 화면 */
@@ -292,9 +288,8 @@ li::marker {
   }
   input[type="checkbox"],
   input[type="radio"] {
-    width: 0.9rem;
-    height: 0.9rem;
-    vertical-align: bottom;
+    width: 1.1rem;
+    height: 1.1rem;
   }
   .cover {
     width: 270px;
