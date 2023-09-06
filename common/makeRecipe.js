@@ -63,7 +63,7 @@ export { makeRecipeHTML };
 function imgSearch(title, $img) {
   let src = "./default.jpg";
   const accessKey = ACCESS_KEY;
-  const apiUrl = `https://api.unsplash.com/search/photos?query=${title}&client_id=${accessKey}&lang=ko`;
+  const apiUrl = `https://api.unsplash.com/search/photos?query=${title}&client_id=${accessKey}&lang=ko&orientaion=squarish`;
 
   fetch(apiUrl)
     .then((response) => response.json())

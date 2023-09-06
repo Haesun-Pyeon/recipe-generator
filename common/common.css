@@ -230,7 +230,7 @@ li::marker {
   text-align: left;
 }
 .delete-all {
-  margin-top: 15px;
+  margin: 20px 0;
   padding: 10px;
   height: auto;
 }
