@@ -54,6 +54,32 @@ header h1 {
   font-size: 2.5rem;
 }
 
+/* 커버창 */
+.cover {
+  margin: auto;
+  padding-top: 40vh;
+  width: 710px;
+}
+.title {
+  font-size: 125px;
+  text-align: center;
+}
+.cover-btn {
+  margin-top: 7vh;
+  width: inherit;
+  height: 7vh;
+}
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(./background.jpg);
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
 /* 메인파트 */
 #main-div {
   padding-top: 125px;
@@ -120,6 +146,13 @@ button[type="submit"] {
 }
 .flex-input li {
   width: 20vw;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 10px;
+  vertical-align: bottom;
 }
 
 /* 레시피 화면 */
@@ -231,9 +264,6 @@ li::marker {
   header h1 {
     font-size: 1.8rem;
   }
-  .flex-input textarea {
-    font-size: 1rem;
-  }
   .desc span {
     display: block;
   }
@@ -250,11 +280,26 @@ li::marker {
   .buttons {
     width: 80vw;
   }
+  .flex-input textarea {
+    font-size: 1rem;
+  }
   .flex-input li {
     width: 32vw;
   }
   .flex-input ul {
     justify-content: space-between;
     gap: 3vw;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 0.9rem;
+    height: 0.9rem;
+    vertical-align: bottom;
+  }
+  .cover {
+    width: 270px;
+  }
+  .title {
+    font-size: 50px;
   }
 }
