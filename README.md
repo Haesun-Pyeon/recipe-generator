@@ -7,9 +7,9 @@
 - 사용자가 현재 갖고 있는 **식재료들**, 현재 사용 가능한 **조리기구**, 그리고 **식재료 추가 가능 여부**를 입력받아 ChatGPT를 이용하여 현재 만들 수 있는 **레시피를 추천**해줍니다.
   <br><br>
 
-## 2. 개발 환경 및 배포 URL
+## 2. 사용한 기술스택 및 배포 URL
 
-### 2.1 개발 환경
+### 2.1 사용한 기술스택
 
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
@@ -35,9 +35,9 @@ recipe-generator
 ├── main
 │   ├── index.html
 │   └── main.js
-└── save_list
+└── saveList
     ├── index.html
-    └── save_list.js
+    └── saveList.js
 ```
 
 ### 3-2. 개발 일정
