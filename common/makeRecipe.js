@@ -24,12 +24,12 @@ function makeRecipeHTML(title, ingredient, recipe, $answer, tf) {
 
   const $ingredient = document.createElement("div");
   $ingredient.setAttribute("class", "ingredient");
-  $ingredient.innerHTML += "<h3>필요한 재료</h3>";
+  $ingredient.innerHTML += `<h3>필요한 재료</h3>`;
   $ingredient.innerHTML += `<p>${ingredient}</p>`;
 
   const $recipe = document.createElement("div");
   $recipe.setAttribute("class", "recipe");
-  $recipe.innerHTML += "<h3>만드는 방법</h3>";
+  $recipe.innerHTML += `<h3>만드는 방법</h3>`;
   $recipe.innerHTML += `<ol><li>${recipe}</ol></li>`;
 
   $contents.appendChild($title);
